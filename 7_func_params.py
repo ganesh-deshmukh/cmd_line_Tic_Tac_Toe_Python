@@ -5,13 +5,15 @@ game = [
 	   ]
 
 
-def gaming_params(input=0, row=0, col=0, just_display=False):
+def gaming_params(game_map, input=0, row=0, col=0, just_display=False):
 	print("     0  1  2")
 	if not just_display:
-		game[row][col] = input
+		game_map[row][col] = input
 	for index, row in enumerate(game):
 		print(index,row)
 
+	return game_map
 
-gaming_params(just_display=True)
-gaming_params(input=1, row=2, col=1)
+
+game = gaming_params(game, just_display=True)
+game = gaming_params(game, input=1, row=2, col=1)
