@@ -1,14 +1,11 @@
-# game = [[0,0,0],
-# 		[0,0,0],
-# 		[0,0,0]]
-game = "I wanted to play this Game now"
+game = [1,2,3]
 print(id(game))
 
-
 def gaming_params(input=0, row=0, col=0, just_display=False):
-	game = "A small Game"
+	game[0] = 100 
 	print(id(game))
-	print(game)  
+
+	print("Local scope value  ", game)  
 
 	# print("     0  1  2")
 	# if not just_display:
@@ -16,9 +13,9 @@ def gaming_params(input=0, row=0, col=0, just_display=False):
 	# for count, row in enumerate(game):
 	# 	print(count, row)
 
-print(game)
+print("Before calling func ", game)
 print(id(game))
 gaming_params() # this will be executed according to sequence.
-print(game)
+print("after calling func ", game)
 print(id(game))
 
