@@ -7,7 +7,9 @@ game = [
 print("class of game is " , type(game))
 
 print("\ngame list-datatype is ", game)
+print("\n")
 
-print("\nrow is ")
-for row in game:
-	print(row)
+print("   0  1  2")
+
+for index, row in enumerate(game):
+	print(index, row)
