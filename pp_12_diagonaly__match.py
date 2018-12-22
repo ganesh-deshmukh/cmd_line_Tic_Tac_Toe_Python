@@ -1,18 +1,28 @@
 game = [
-		[1,0,1],
+		[1,0,2],
 		[0,1,0],
-		[1,2,1],
+		[1,2,0],
 	   ]
 
 # len(game) = 3
-diags = (range(len(game)))
+# diags = (range(len(game)))
 rev_diags = list(reversed(range(len(game)))) 
 # reversed returns iterator not sequence of elements, 
 # else throws error as object is not subscriptable
 
-print(diags)
+# for idx in range(len(game)):
+# 	print(idx, rev_diags[idx])
 
-print(rev_diags)
+# for col,row, in zip(diags,rev_diags):
+	# print(row,col)
+
+
+diags = [] 
+for row,col in enumerate(rev_diags): # It started from index=2 upto index=0
+	diags.append(game[row][col])
+
+print(diags)
+# print(rev_diags)
 
 
 
