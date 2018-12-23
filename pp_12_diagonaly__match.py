@@ -5,7 +5,7 @@ game = [
 	   ]
 
 # len(game) = 3
-# diags = (range(len(game)))
+diags = (range(len(game)))
 rev_diags = list(reversed(range(len(game)))) 
 # reversed returns iterator not sequence of elements, 
 # else throws error as object is not subscriptable
@@ -17,12 +17,15 @@ rev_diags = list(reversed(range(len(game))))
 	# print(row,col)
 
 
-diags = [] 
+diagonal = [] 
 for row,col in enumerate(rev_diags): # It started from index=2 upto index=0
-	diags.append(game[row][col])
+	diagonal.append(game[row][col])
 
-print(diags)
-# print(rev_diags)
+# print("game is = ", game)
+for index, row in game:
+	print()
+print("diags is  ", diags)
+print("rev_diags ",rev_diags)
 
 
 
