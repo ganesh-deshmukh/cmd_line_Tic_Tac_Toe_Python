@@ -1,10 +1,10 @@
 import itertools
 
-game = [
-		[1,2,0],
-		[0,2,1],
-		[1,2,1],
-	   ]
+# game = [
+# 		[1,2,0],
+# 		[0,2,1],
+# 		[1,2,1],
+# 	   ]
 
 # len(game) = 3
 
@@ -47,6 +47,9 @@ def win(current_game):
 
 def gaming_params(game_map, input=0, row=0, col=0, just_display=False):
 	try:
+		if game[row][col] != 0:
+			print("this position is occupied, please choose other")
+			return False
 		print("   0  1  2")
 		if not just_display:
 			game_map[row][col] = input
@@ -59,8 +62,10 @@ def gaming_params(game_map, input=0, row=0, col=0, just_display=False):
 	except IndexError as e:
 		print("You have entered value of row/column other than 0,1,2\n",e)
 		# print("you have an error, please follow syntax and check logic")
+		return False
 	except Exception as e:
 		print("Error is not caught, so General Exception is called!\n",e)
+		return False
 	# finally :
 		# print("This block of code will run compulsorily")
 
