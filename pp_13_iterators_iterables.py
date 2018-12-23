@@ -1,3 +1,5 @@
+import itertools
+
 game = [
 		[1,2,0],
 		[0,2,1],
@@ -51,6 +53,7 @@ def gaming_params(game_map, input=0, row=0, col=0, just_display=False):
 		for index, row in enumerate(game):
 			print(index,row)
 
+		print("**********************************************************")
 		return game_map
 
 	except IndexError as e:
@@ -65,16 +68,19 @@ play = True
 players = [1,2]
 
 while play:
-	print("*************game is started newly!!***************")
+	print("************* Game is started newly!! ***************")
 	game = [[0,0,0],
 			[0,0,0],
 			[0,0,0]]
 
 	game_won = False
 	game = gaming_params(game, just_display = True) # before game starts
+	player_choice = itertools.cycle([1,2])
+
 
 	while not game_won:
-		current_player = 1 # he enters his values as 1's
+		current_player = next(player_choice)
+		print(f"Current Player => {current_player}")
 		row_choice = int(input("In which Row you wanted to enter value(0,1,2)?=> "))
 		column_choice = int(input("In which Column you wanted to enter value ? => "))
 		game = gaming_params(game, current_player, row_choice, column_choice)
