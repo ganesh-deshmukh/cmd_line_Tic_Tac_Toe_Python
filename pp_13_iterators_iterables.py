@@ -40,4 +40,44 @@ def win(current_game):
 			print("Vertically")
 			print(f"Player {check[0]} Vertically =")
 
-win(game)
+# win(game)
+
+
+def gaming_params(game_map, input=0, row=0, col=0, just_display=False):
+	try:
+		print("   0  1  2")
+		if not just_display:
+			game_map[row][col] = input
+		for index, row in enumerate(game):
+			print(index,row)
+
+		return game_map
+
+	except IndexError as e:
+		print("You have entered value of row/column other than 0,1,2\n",e)
+		# print("you have an error, please follow syntax and check logic")
+	except Exception as e:
+		print("Error is not caught, so General Exception is called!\n",e)
+	# finally :
+		# print("This block of code will run compulsorily")
+
+play = True
+players = [1,2]
+
+while play:
+	print("*************game is started newly!!***************")
+	game = [[0,0,0],
+			[0,0,0],
+			[0,0,0]]
+
+	game_won = False
+	game = gaming_params(game, just_display = True) # before game starts
+
+	while not game_won:
+		current_player = 1 # he enters his values as 1's
+		row_choice = int(input("In which Row you wanted to enter value(0,1,2)?=> "))
+		column_choice = int(input("In which Column you wanted to enter value ? => "))
+		game = gaming_params(game, current_player, row_choice, column_choice)
+
+# game = gaming_params(game, just_display=True)
+# game = gaming_params(game, input=2, row=1, col=1) 
