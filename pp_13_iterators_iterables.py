@@ -9,28 +9,38 @@ import itertools
 # len(game) = 3
 
 def win(current_game):
+
+	def check_all_same(l):
+		if l.count(l[0]) == len(l) and l[0] != 0:
+			return True
+		else:
+			return False
+
 	#Horizontal
 	for row in game:
 		print(row)
-		if row.count(row[0]) == len(row) and row[0] != 0 :
+		if check_all_same(row):
 			print("Horizontally")
 			print(f"Player {row[0]} Won Horizontally ")
+			return True
 
 	# Diagonal
 	diags = [] 
 	for col,row in enumerate(reversed(range(len(game)))): # It started from index=2 upto index=0
 		diags.append(game[row][col])
-	if diags.count(diags[0]) == len(diags) and diags[0] != 0:
-
+	if check_all_same(diags):
 		print("Diagonally (/) ")
 		print(f"Player {diags[0]} Reverse-Diagonally (/)")
+		return True
+
 
 	diags = []
 	for ix in range(len(game)):
 		diags.append(game[ix][ix])
-	if diags.count(diags[0]) == len(diags) and diags[0] != 0:
+	if check_all_same(diags):
 		print("Diagonally (\\)")
 		print(f"Player {diags[0]} Diagonally (\\)")
+		return True
 
 	#Vertical
 	for col in range(len(game)):
@@ -38,10 +48,11 @@ def win(current_game):
 		for row in game:
 			check.append(row[col])
 
-		if check.count(check[0]) == len(check) and check[0] != 0:
+		if check_all_same(check):
 			print("Vertically")
 			print(f"Player {check[0]} Vertically =")
-
+			return True
+	return False
 # win(game)
 
 
