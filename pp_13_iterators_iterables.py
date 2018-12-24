@@ -30,7 +30,7 @@ def win(current_game):
 		diags.append(game[row][col])
 	if check_all_same(diags):
 		print("Diagonally (/) ")
-		print(f"Player {diags[0]} Reverse-Diagonally (/)")
+		print(f"Player {diags[0]} Won Reverse-Diagonally (/)")
 		return True
 
 
@@ -39,7 +39,7 @@ def win(current_game):
 		diags.append(game[ix][ix])
 	if check_all_same(diags):
 		print("Diagonally (\\)")
-		print(f"Player {diags[0]} Diagonally (\\)")
+		print(f"Player {diags[0]} Won Diagonally (\\)")
 		return True
 
 	#Vertical
@@ -50,9 +50,9 @@ def win(current_game):
 
 		if check_all_same(check):
 			print("Vertically")
-			print(f"Player {check[0]} Vertically =")
+			print(f"Player {check[0]} Won Vertically =")
 			return True
-	return False
+	return False 
 # win(game)
 
 
@@ -102,7 +102,15 @@ while play:
 			row_choice = int(input("In which Row you wanted to enter value(0,1,2)?=> "))
 			column_choice = int(input("In which Column you wanted to enter value ? => "))
 			game , played = gaming_params(game, current_player, row_choice, column_choice)
-			
-
+		
+		if win(game):
+			game_won = True
+			again = input("Do you want to Play it Again?")
+			if again.lower() == 'y':
+				print("Restarting Game")
+				play = True
+			else:
+				print("Okay, Bye. Terminating game...")
+				play = False
 # game = gaming_params(game, just_display=True)
 # game = gaming_params(game, input=2, row=1, col=1) 
