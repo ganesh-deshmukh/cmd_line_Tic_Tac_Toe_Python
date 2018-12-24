@@ -12,4 +12,4 @@ run command
 
 # Demo
 
-(./tic-tac-toe-python.gif)
+![Demo-of-project](https://github.com/ganesh-deshmukh/python-revision/blob/master/tic-tac-toe-python.gif)
