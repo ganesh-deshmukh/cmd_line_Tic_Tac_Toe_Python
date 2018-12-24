@@ -1,5 +1,13 @@
 import itertools
 
+# game = [
+#       [1,2,0],
+#       [0,2,1],
+#       [1,2,1],
+#      ]
+
+# len(game) = 3
+
 def win(current_game):
 
     def check_all_same(l):
