@@ -104,3 +104,4 @@ while play:
             else:
                 print("Okay, Bye. Terminating game...")
                 play = False
+;
