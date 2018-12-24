@@ -9,3 +9,7 @@ go to downloads folder and make sure you are using python_3.x
 run command
 `python pp_14_tic_tac_toe_game.py` and Enjoy the game.
 
+
+# Demo
+
+(./tic-tac-toe-python.gif)
